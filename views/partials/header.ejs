@@ -1,0 +1,15 @@
+<section class="header" data-position="header">
+  <h3>
+    <%= h.siteName %> &#x2758;
+      <i>Paperwork Faster</i>
+      <span>Wellcome <%= user ? `${user.username}` : 'Guest' %></span>
+  </h3>
+
+  <div class="menu">
+    <a href="/" class="reg">Home</a>
+    <a href="/register" class="reg">Register</a>
+    <a href="/login" class="login">Login</a>
+    <a href="/logout" class="logout">Logout</a>
+  </div>
+  <img class="logo" src="/assets/logo-w.png" alt="Logo" width="50" height="50">
+</section>

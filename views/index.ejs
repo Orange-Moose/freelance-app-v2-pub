@@ -1,0 +1,120 @@
+<%- include('partials/head'); %>
+
+
+<body>
+  <%- include('partials/header'); %>
+
+  <div class="notification"><p>Notification</p></div>
+
+  <section class="wrapper">
+
+    <section class="logs-container" data-position="logs">
+      <div class="container-head">
+        <h1>SĄSKAITOS</h1>
+        <input class="invoice-search" type="text" name="search" placeholder="Search">
+      </div>
+
+      <div class="logs">
+        <% invoices.forEach(invoice=> { %>
+          <%- include('partials/invoice', { invoice }); %>
+            <% }) %>
+      </div>
+    </section>
+    
+    <section class="main-container" data-position="pdf-form">
+      <div class="client">
+        <h1>UŽSAKOVAS</h1>
+    
+        <form class="client-form" method="post" action="/new-client">
+          <input type="text" placeholder="Įmonės pavadinimas" name="title" />
+          <input type="text" placeholder="Įmonės kodas / gimimo data" name="reg_code" />
+          <input type="text" placeholder="Adresas" name="address" />
+          <input type="text" placeholder="Telefonas" name="phone" />
+          <input type="text" placeholder="El. paštas" name="email" />
+          <input type="text" placeholder="Vadovas / atsakingas asmuo" name="ceo" />
+          <div class="options">
+            <label for="add-client" style="word-wrap:break-word">
+              <input type="checkbox" id="add-client" name="add-new" />New client
+            </label>
+            <label for="update-client" style="word-wrap:break-word">
+              <input type="checkbox" id="update-client" name="update" disabled />Update client
+            </label>
+          </div>
+        </form>
+      </div>
+    
+      <div class="switch-container">
+        <p>Sąskaita</p>
+        <div class="switch">
+          <input type="checkbox" name="switch" id="switch"/>
+          <label for="switch"></label>
+        </div>
+        <p>Sutartis</p>
+      </div>
+    
+      <div class="docs-container">
+        <div class="invoice">
+          <h1>SĄSKAITA</h1>
+          <form class="invoice-form">
+            <div class="inv-info">
+              <input name="date" type="text" placeholder="Data">
+              <input name="serial" type="text" placeholder="Dokumento nr.">
+              <input name="due" type="text" placeholder="Apmokėjimo terminas">
+            </div>
+            <h4 class="services-title">Suteiktos paslaugos</h4>
+            <div class="services">
+              <div class="service-line">
+                <input name="service" type="text" placeholder="Paslaugos pavadinimas">
+                <input name="quantity" type="text" placeholder="Kiekis">
+                <input name="price" type="text" placeholder="Vnt. kaina, €">
+                <input name="total" type="text" placeholder="Suma, €">
+              </div>
+            </div>
+            <button class="add-service">+</button>
+            <h4 class="expenses-title">Kliento išlaidos</h4>
+            <div class="expenses">
+              <div class="expense-line">
+                <input name="expense" type="text" placeholder="Kliento išlaidos">
+                <input name="quantity" type="text" placeholder="Kiekis">
+                <input name="price" type="text" placeholder="Vnt. kaina, €">
+                <input name="total" type="text" placeholder="Suma, €">
+              </div>
+            </div>
+            <button class="add-expense">+</button>
+            
+          </form>
+        </div>
+        <div class="totals">
+          <h5 class="total_srv">Paslaugos: <span>0</span> €</h5>
+          <h5 class="total_exp">Išlaidos: <span>0</span> €</h5>
+          <h5 class="total">Iš viso: <span>0</span> €</h4>
+        </div>
+      </div>
+      <button type="button" class="download-pdf submit-btn">Download PDF</button>
+    
+    </section>
+    
+    <section class="clients-container" data-position="clients">
+      <div class="container-head">
+        <h1>KLIENTAI</h1>
+        <input class="client-search" type="text" name="search" placeholder="Search">
+      </div>
+
+      <div class="saved-clients">
+        <% clients.forEach(client=> { %>
+          <%- include('partials/client', { client }); %>
+            <% }) %>
+      </div>
+    </section>
+
+  </section>
+  <section class="footer"></section>
+
+  
+
+ <script type="module" src="./index.js"></script>
+</body>
+</html>
+
+
+

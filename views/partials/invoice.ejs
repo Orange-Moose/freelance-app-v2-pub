@@ -1,0 +1,23 @@
+<div id=<%=invoice._id %> class="invoice-card">
+  <div class="invoice-log">
+    <h3 class="client"><%= invoice.clientTitle %></h3>
+    <p class="date">
+      Data: <%= invoice.date %>
+    </p>
+  </div>
+  <div class="log-content">
+    <p class="serial">
+      Nr. <%= invoice.serial %>
+    </p>
+    <p class="total-srv">
+      Paslaugos: <%= invoice.total_srv %> €
+    </p>
+    <p class="total-exp">
+      Išlaidos: <%= invoice.total_exp %> €
+    </p>
+    <p class="total">
+      Iš viso: <%= invoice.total %> €
+    </p>
+  </div>
+  <button class="delete-invoice">&times</button>
+</div>

@@ -1,0 +1,31 @@
+<%- include('partials/head') %>
+
+  <body>
+    <%- include('partials/header') %>
+
+    <div class="wrapp">
+      
+    <section class="register-wrap">
+
+      <div class="error-messages">
+        <% if(flashes.length) { %>
+          <% flashes.forEach(function(flash) { %>
+            <%- include('partials/flashes', { flash }) %>
+          <% }); %>
+        <% } %>
+      </div>
+
+
+      <h3><%= title %></h3>
+      
+      <form class="register-form" method="post" action="/register">
+        <input name="username" type="text" placeholder="Username" value="<%= body.username || '' %>">
+        <input name="email" type="email" placeholder="Email" value="<%= body.email || '' %>">
+        <input name="password" type="password" placeholder="Password">
+        <input name="confirm-password" type="password" placeholder="Confirm password">
+        <input type="submit" value="Register">
+      </form>
+    </section>
+    </div>
+  </body>
+</html>

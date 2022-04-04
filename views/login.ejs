@@ -1,0 +1,31 @@
+<%- include('partials/head') %>
+
+<body>
+  
+  
+  <%- include('partials/header') %>
+  
+  <div class="wrapp">
+    <section class="login-wrap">
+      <h3>
+        <%= title %>
+      </h3>
+
+      <div class="error-messages">
+        <% if(flashes.length) { %>
+          <% flashes.forEach(function(flash) { %>
+            <%- include('partials/flashes', { flash }) %>
+          <% }); %>
+        <% } %>
+      </div>
+
+      <form class="login-form" method="post" action="/login">
+        <input name="email" type="email" placeholder="Email">
+        <input name="password" type="password" placeholder="Password" minlength="8">
+        <input type="submit" value="Login">
+      </form>
+    </section>
+  </div>
+</body>
+
+</html>
