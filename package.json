@@ -5,8 +5,7 @@
   "main": "start.js",
   "scripts": {
     "start": "node start.js",
-    "dev": "nodemon start.js",
-    "build": "parcel views/index.ejs"
+    "dev": "nodemon start.js"
   },
   "author": "",
   "license": "ISC",
