@@ -1,6 +1,7 @@
 //Express-validator V6 docs: https://express-validator.github.io/docs/migration-v5-to-v6.html
 import { body, validationResult } from 'express-validator';
 import { appDatabase, bcrypt } from '../start.js';
+import { bcryptjs } from 'bcryptjs';
 
 ///// REGISTRATION /////
 
@@ -46,7 +47,9 @@ const validateRegister = async (req, res, next) => {
 
 const register = async (req, res, next) => {
   // hash password
-  const hash = await bcrypt.hash(req.body.password, 10);
+  // const hash = await bcrypt.hash(req.body.password, 10);
+  const hash = await bcryptjs.hash(req.body.password, 10);
+  console.log(hash);
   delete req.body['confirm-password'];
 
   const user = {

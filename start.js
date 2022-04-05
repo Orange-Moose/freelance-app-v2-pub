@@ -8,7 +8,7 @@ import crypto from 'crypto';
 import flash from 'connect-flash';
 import helpers from './helpers.js';
 import routes from './routes.js';
-import bcrypt from 'bcrypt'
+// import bcrypt from 'bcrypt'
 import dotenv from 'dotenv';
 dotenv.config({ path: 'variables.env' });
 
