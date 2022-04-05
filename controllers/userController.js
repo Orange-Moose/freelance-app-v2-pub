@@ -1,7 +1,6 @@
 //Express-validator V6 docs: https://express-validator.github.io/docs/migration-v5-to-v6.html
 import { body, validationResult } from 'express-validator';
-import { appDatabase } from '../start.js';
-import bcrypt from 'bcrypt';
+import { appDatabase, bcrypt } from '../start.js';
 
 ///// REGISTRATION /////
 
@@ -76,7 +75,6 @@ const loginForm = (req, res) => {
 const logout = (req, res) => {
   delete req.session.user;
   console.log('Logged out.');
-  // console.log(req.session);
   res.redirect('login');
 };
 

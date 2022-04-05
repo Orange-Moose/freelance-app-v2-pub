@@ -1,5 +1,4 @@
-import bcrypt from 'bcrypt';
-import { appDatabase } from '../start.js';
+import { appDatabase, bcrypt } from '../start.js';
 
 const login = async (req, res) => {
   const user = await appDatabase.collection('users')

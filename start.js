@@ -8,6 +8,7 @@ import crypto from 'crypto';
 import flash from 'connect-flash';
 import helpers from './helpers.js';
 import routes from './routes.js';
+import bcrypt from 'bcrypt'
 import dotenv from 'dotenv';
 dotenv.config({ path: 'variables.env' });
 
@@ -91,6 +92,6 @@ const server = app.listen(app.get('port'), () => {
   console.log(`Express running ->  PORT ${server.address().port}`);
 });
 
-export { appDatabase, ObjectId };
+export { appDatabase, ObjectId, bcrypt };
 
 
