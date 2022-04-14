@@ -161,7 +161,7 @@ const handleTotals = () => {
 const sumInvLine = (e) => {
   let [ , quantity, price, total ] = Array.from(e.currentTarget.children);
   
-  total.value ? total.value = ((parseFloat(quantity.value) || 0) * (parseFloat(price.value) || 0)).toFixed(2) : total.value = 0;
+  total.value ? total.value = ((parseFloat(quantity.value.replace(/,/g, '.')) || 0) * (parseFloat(price.value.replace(/,/g, '.')) || 0)).toFixed(2) : total.value = 0;
   
   handleTotals();
 };
