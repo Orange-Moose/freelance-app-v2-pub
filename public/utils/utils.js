@@ -64,6 +64,7 @@ const getInvLinesValues = () => {
   allInputs.services.forEach(line => {
     let obj = { service: 0, quantity: 0, price: 0, total: 0 };
     line.map((input, i) => {
+      if (input.name !== "service") input.value = input.value.replace(/,/g, '.');
       obj[Object.keys(obj)[i]] = input.value;
     });
     srvVals.push(obj);
@@ -72,6 +73,7 @@ const getInvLinesValues = () => {
   allInputs.expenses.forEach(line => {
     let obj = { expense: 0, quantity: 0, price: 0, total: 0 };
     line.map((input, i) => {
+      if (input.name !== "expense") input.value = input.value.replace(/,/g, '.');
       obj[Object.keys(obj)[i]] = input.value;
     });
     expVals.push(obj);
