@@ -64,7 +64,7 @@ const getInvLinesValues = () => {
   allInputs.services.forEach(line => {
     let obj = { service: 0, quantity: 0, price: 0, total: 0 };
     line.map((input, i) => {
-      if (input.name !== "service") input.value = input.value.replace(/,/g, '.');
+      input.name === "service" ? input.value = input.value : input.value = input.value.replace(/,/g, '.');
       obj[Object.keys(obj)[i]] = input.value;
     });
     srvVals.push(obj);
@@ -73,20 +73,11 @@ const getInvLinesValues = () => {
   allInputs.expenses.forEach(line => {
     let obj = { expense: 0, quantity: 0, price: 0, total: 0 };
     line.map((input, i) => {
-      if (input.name !== "expense") input.value = input.value.replace(/,/g, '.');
+      input.name === "expense" ? input.value = input.value : input.value = input.value.replace(/,/g, '.');
       obj[Object.keys(obj)[i]] = input.value;
     });
     expVals.push(obj);
   });
-
-  /* console.log([...srvVals, ...expVals]); 
-  Returns Array of objects for each line in the invoice 
-  [ 
-    0: {service: 'E-shopas', quantity: '3', price: '10', total: '30.00'}
-    1: { service: 'Kasimas', quantity: '2', price: '150', total: '300.00' }
-    2: { expense: 'ADW BU', quantity: '2', price: '153', total: '306.00' }
-    3: { expense: 'islaida ads', quantity: '1', price: '680', total: '680.00' } 
-  ] */
   
   return [...srvVals, ...expVals];
 };
