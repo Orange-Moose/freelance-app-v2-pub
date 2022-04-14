@@ -12,7 +12,6 @@ const login = async (req, res) => {
 
   if(user) {
     const isValid = await bcrypt.compare(req.body.password, user.password);
-    console.log(isValid);
 
     if(!isValid) {
       res.render('login', { title: 'Login', body: req.body, flashes: ['Incorrect password.'] });

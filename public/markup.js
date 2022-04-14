@@ -21,7 +21,7 @@ const invoiceMarkup =
       <div class="inv-info">
         <input name="date" type="text" placeholder="Data" value="${getDate()}">
         <input name="serial" type="text" placeholder="Dokumento nr." value="${getSerial('invoice')}">
-        <input name="due" type="text" placeholder="Apmokėjimo terminas">
+        <input name="due" type="text" placeholder="Apmokėjimo terminas" value="5 d.d.">
       </div>
       <h4 class="services-title">Suteiktos paslaugos</h4>
       <div class="services">

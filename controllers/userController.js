@@ -31,8 +31,6 @@ const validateRegister = async (req, res, next) => {
 
   const validationResults = await validationResult(req);
   const errorMessages = validationResults.array().map(err => err.msg);
-
-  // console.log(req.body);
  
   if (errorMessages.length) {
     req.flash('errors', errorMessages);
@@ -47,7 +45,6 @@ const validateRegister = async (req, res, next) => {
 const register = async (req, res, next) => {
   // hash password
   const hash = await bcrypt.hash(req.body.password, 10);
-  console.log(hash);
   delete req.body['confirm-password'];
 
   const user = {

@@ -243,7 +243,7 @@ const getPdfText = (req, res, next) => {
                   `Įmonės / asmens kodas: ${req.body.clientData.reg_code}\n`,
                   `Adresas: ${req.body.clientData.address}\n`,
                   `El. p.: ${req.body.clientData.email}\n`,
-                  `Tel.: ${req.body.clientData.email}\n`
+                  `Tel.: ${req.body.clientData.phone}\n`
                 ],
               style: 'text'
             },
