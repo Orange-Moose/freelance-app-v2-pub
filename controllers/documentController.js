@@ -16,7 +16,6 @@ const getLogs = async (req, res) => {
 
 
 const saveDocumentLog = (req, res) => {
-
   req.body.userID = res.locals.user.id;
   req.body.username = res.locals.user.username;
 
