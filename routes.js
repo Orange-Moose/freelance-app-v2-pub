@@ -5,13 +5,11 @@ import { getLogs, saveDocumentLog, useDocumentLog, searchDocumentLogs } from './
 import { getPdfText } from './PDF/pdfContent.js';
 import { createPdf, downloadPdf } from './PDF/pdf.js';
 
-
-
 import express from 'express';
 const router = express.Router();
 
 
-// REGISTER
+////// REGISTER ROUTES /////
 router.get('/register', registerForm);
 router.post('/register',
   validateRegister, // middleware (userController)
@@ -19,12 +17,10 @@ router.post('/register',
   login // login the user (authController);
 );
 
-// LOG IN
+///// LOGIN ROUTES /////
 router.get('/login', loginForm);
 router.post('/login', login);
 router.get('/logout', logout);
-
-
 
 ///// CLIENT ROUTES /////
 router.get('/', getHomepage);
@@ -40,7 +36,6 @@ router.post('/invoice-log/:action', useDocumentLog);
 
 
 ///// PDF ROUTES /////
-
 router.post('/pdf', getPdfText, createPdf);
 router.get('/pdf', downloadPdf);
 

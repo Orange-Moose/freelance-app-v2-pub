@@ -58,7 +58,7 @@ MONGO DATABASE
 import mongodb from 'mongodb';
 const ObjectId = mongodb.ObjectId; // unique ids for DB documents
 
-// Connect to Database database
+// Connect to database
 let appDatabase;
 
 mongodb.connect(
