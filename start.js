@@ -86,7 +86,7 @@ app.use((req, res, next) => {
 app.use('/', routes);
 
 
-//START THE APP!
+//START THE APP
 app.set('port', process.env.PORT || 8080);
 const server = app.listen(app.get('port'), () => {
   console.log(`Express running ->  PORT ${server.address().port}`);

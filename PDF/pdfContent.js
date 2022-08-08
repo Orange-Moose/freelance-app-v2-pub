@@ -65,64 +65,64 @@ const getPdfText = (req, res, next) => {
 
 
         {
-          text: `${req.body.clientData.title}, įmonės / asmens kodas ${req.body.clientData.reg_code}, adresas ${req.body.clientData.address}. Atstovas (-ė) ${req.body.clientData.ceo}, toliau vadinamas UŽSAKOVU, ir  Šarūnas Matulaitis, individualios veiklos pažyma Nr. 106752, adresas Pajautos g. 5-15, Vilnius,  toliau vadinamas PASLAUGOS TEIKĖJU, sudarėme šią Sutartį:\n`,
+          text: `${req.body.clientData.title}, įmonės / asmens kodas ${req.body.clientData.reg_code}, adresas ${req.body.clientData.address}. Atstovas (-ė) ${req.body.clientData.ceo}, toliau vadinamas UŽSAKOVU, ir  Orange Moose, reg Nr. 123456789, adresas Gatvė 123, Vilnius, toliau vadinamas PASLAUGOS TEIKĖJU, sudarėme šią Sutartį:\n`,
           style: 'text'
         },
 
         {
-          text: '1.	SUTARTIES DALYKAS IR KAINA',
+          text: '1.	Flannel prism yuccie DIY',
           style: 'subheader',
           alignment: 'center',
         },
 
         {
           text: [
-            `1.1.	Šia sutartimi PASLAUGOS TEIKĖJAS įsipareigoja suteikti UŽSAKOVUI tokias paslaugas:\n ${req.body.docData["task"]}\n`,
-            `1.2.	Paslaugų suteikimo terminas – ${req.body.docData["duration"]}\n`,
-            '1.3.	Už suteiktą paslaugą UŽSAKOVAS įsipareigoja sumokėti PASLAUGOS TEIKĖJUI ', { text: `${req.body.docData["price"]} `, bold: true }, '€ sumą. Į paslaugų kainą yra įskaičiuoti visi Lietuvos Respublikos įstatymais numatyti mokesčiai, kurių sumokėjimas į valstybės biudžetą yra PASLAUGOS TEIKĖJO pareiga. UŽSAKOVAS neprisiima jokios atsakomybės, jeigu PASLAUGOS TEIKĖJAS šios pareigos neįvykdo.\n'],
+            `1.1.	Hashtag glossier williamsburg cred fingerstache, whatever XOXO tote bag bushwick street art hot chicken kitsch:\n ${req.body.docData["task"]}\n`,
+            `1.2.	Banh mi kombucha messenger bag – ${req.body.docData["duration"]}\n`,
+            '1.3.	Marfa cronut YOLO taxidermy chartreuse intelligentsia tumeric chia ', { text: `${req.body.docData["price"]} `, bold: true }, '€. Small batch quinoa listicle mumblecore biodiesel echo park pug four dollar toast. Selvage mukbang chicharrones poke. Selvage retro chartreuse master cleanse brunch austin truffaut pour-over pok pok ethical church-key praxis echo park kinfolk gentrify. Franzen irony man bun, brunch cred trust fund vibecession cardigan leggings art party heirloom semiotics.\n'],
           style: 'text'
         },
 
 
         {
-          text: '2.	ŠALIŲ TEISĖS IR PAREIGOS',
+          text: '2.	Butcher poutine squid XOXO',
           style: 'subheader',
           alignment: 'center',
 
         },
 
         {
-          text: '2.1. Šia sutartimi PASLAUGOS TEIKĖJAS įsipareigoja:',
+          text: '2.1. Offal tote bag 90s forage actually wayfarers:',
           style: 'text'
         },
 
         {
           ol: [
-            'Paslaugas suteikti kokybiškai ir laiku;',
-            'Įspėti UŽSAKOVĄ apie aplinkybes, sudarančias grėsmę teikiamų paslaugų tinkamumui;',
-            'Paaiškinti kaip valdyti ir administruoti svetainę.'
+            'Brunch portland church-key irony XOXO;',
+            'Cronut sustainable gluten-free truffaut next level jean shorts polaroid try-hard;',
+            'Mustache tbh live-edge tilde kale chips.'
           ],
           margin: [20, 0, 0, 0],
           style: 'text'
         },
 
         {
-          text: '2.2. UŽSAKOVAS įsipareigoja:',
+          text: '2.2. VHS godard vape heirloom bruh:',
           style: 'text'
         },
 
 
         {
           ol: [
-            `Sumokėti avansą (${req.body.docData["adv_payment"]}%), per 5 darbo dienas nuo sutarties pasirašymo dienos;`,
-            'Sumokėti likusią sumą, numatytą sutarties 1.3 punkte, per 5 darbo dienas nuo paslaugų priėmimo-perdavimo akto pasirašymo dienos ir/arba sąskaitos pateikimo dienos.'
+            `Before they sold out (${req.body.docData["adv_payment"]}%), artisan tote bag vape meggings echo park. Blue bottle pop-up vape;`,
+            'Unicorn shabby chic raclette fixie. Af 3 wolf moon chia edison bulb forage stumptown pabst adaptogen. Pug salvia polaroid thundercats kogi.'
           ],
           margin: [20, 0, 0, 0],
           style: 'text'
         },
 
         {
-          text: '3. ŠALIŲ ATSAKOMYBĖ',
+          text: '3. Organic DIY',
           style: 'subheader',
           alignment: 'center',
 
@@ -130,11 +130,9 @@ const getPdfText = (req, res, next) => {
 
         {
           text: [
-            '3.1. Jei PASLAUGOS TEIKĖJAS nukrypsta nuo sutarties sąlygų ir dėl to sutrinka darbo eiga, arba padaro darbe kitokių trūkumų, UŽSAKOVAS turi teisę reikalauti: neatlyginamai ištaisyti nurodytuosius trūkumus per atitinkamą laiką.\n',
-            '3.2. Jei UŽSAKOVAS delsia pateikti darbams reikiamą medžiagą ar atsakyti į su darbų vykdymu susijusius klausimus, PASLAUGOS TEIKĖJAS turi teisę atitinkamai nukelti darbų pabaigos datą.\n',
-            '3.3. Jei UŽSAKOVAS vienašališkai nusprendžia nutraukti sutarti ', { text: `ne dėl `, bold: true }, 'PASLAUGOS TEIKĖJO darbo trūkumų ar vėlavimo, UŽSAKOVAS privalo sumokėti PASLAUGOS TEIKĖJUI už visus darbus, atliktus iki sutarties nutraukimo dienos.\n',
-            '3.4. Pradėjus darbus avansas nėra grąžinamas.\n',
-            '3.5. Kol už darbus nėra pilnai atsiskaityta pagal 1.3 punkte nurodytas sąlygas, teisės į svetainę priklauso PASLAUGOS TEIKĖJUI. Atsiskaičius, visos teisės į svetainę priklauso UŽSAKOVUI.\n',
+            '3.1. Organic DIY banjo cray freegan, polaroid synth fanny pack truffaut bruh enamel pin pork belly four dollar toast.\n',
+            '3.2. Tonx bitters marfa aesthetic cardigan mustache. Fanny pack actually portland fam. Venmo fingerstache Brooklyn whatever, schlitz plaid same tumblr. Viral ramps ugh vice, humblebrag you probably havent heard of them + 1 farm - to - table activated charcoal etsy.\n',
+            '3.3. Im baby wolf church - key lyft hot chicken small batch master cleanse brunch occupy lo - fi seitan wayfarers offal. ', { text: `YOLO `, bold: true }, 'Cronut schlitz drinking vinegar, heirloom coloring book vexillologist master cleanse tonx shoreditch.\n'
           ],
           style: 'text'
         },
@@ -154,7 +152,7 @@ const getPdfText = (req, res, next) => {
             },
             {
               width: '50%',
-              text: ['....................................................\n', 'Šarūnas Matulaitis']
+              text: ['....................................................\n', 'Orange Moose']
             },
           ],
           columnGap: 30,
@@ -168,16 +166,16 @@ const getPdfText = (req, res, next) => {
         // SECOND PAGE
 
         {
-          text: '4.	KONFIDENCIALUMAS',
+          text: '4.	Chicharrones',
           style: 'subheader',
           alignment: 'center',
         },
 
         {
           text: [
-            '4.1.	Konfidencialia laikoma visa bet kokio pobūdžio ir bet kokia forma (raštu, žodžiu, daiktinė ir kt.) šios sutarties vykdymui gauta informacija.\n',
-            '4.2.	PASLAUGOS TEIKĖJAS įsipareigoja neatskleisti pats bei nesudaryti galimybių susipažinti su konfidencialia informacija tretiesiems asmenims, išskyrus teisėtvarkos institucijų pareigūnų teisėtus reikalavimus.\n',
-            '4.3.Pažeidęs konfidencialumo įsipareigojimą, PASLAUGOS TEIKĖJAS privalo atlyginti UŽSAKOVO dėl to patirtus nuostolius.\n'
+            '4.1.	Meggings small batch swag intelligentsia tote bag cronut truffaut. Tumblr poutine DSA kinfolk meh yr bruh, lo-fi flannel chia YOLO ethical gastropub dreamcatcher fit.\n',
+            '4.2.	Blue bottle gluten-free butcher try-hard kombucha PBR&B enamel pin knausgaard, austin shaman hashtag food truck raw denim bitters.\n',
+            '4.3.Schlitz food truck fixie tousled. Cray gentrify bitters squid roof party four dollar toast meditation activated charcoal mlkshk. 90s pork belly cronut, art party thundercats four dollar toast ramps sartorial small batch artisan kombucha everyday carry salvia farm - to - table.\n'
           ],
           style: 'text'
         },
@@ -190,44 +188,43 @@ const getPdfText = (req, res, next) => {
 
         {
           text: [
-            '5.1.	Sutarties šalys atleidžiamos nuo atsakomybės už savo įsipareigojimų nevykdymą, jeigu įrodo, kad šių įsipareigojimų nebuvo galima vykdyti dėl nenugalimos jėgos (force majeure), kurios sutarties sudarymo momentu šalys negalėjo numatyti ir kurios negalėjo išvengti ar nugalėti.\n'
+            '5.1.	PBR&B vegan plaid mukbang biodiesel pok pok. Readymade pug cold-pressed forage ugh roof party tousled yr paleo brunch fanny pack snackwave prism salvia. VHS shoreditch live-edge thundercats, gluten-free mixtape green juice paleo 3 wolf moon meditation 8-bit street art cronut.\n'
           ],
           style: 'text'
         },
 
         {
-          text: '6. TAIKYTINA TEISĖ IR GINČŲ SPRENDIMAS',
+          text: '6. Meditation mumblecore cold-pressed',
           style: 'subheader',
           alignment: 'center',
         },
 
         {
           text: [
-            '6.1. Sutarčiai taikoma Lietuvos Respublikos teisė.\n',
-            '6.2. Esant prieštaravimų tarp sutarties sąlygų ir Lietuvos Respublikos norminių aktų nuostatų, taikomos Lietuvos Respublikos norminių aktų nuostatos.\n',
-            '6.3. Visi ginčai, kilę iš sutarties, sprendžiami Lietuvos Respublikos įstatymų nustatyta tvarka.\n'
+            '6.1. Direct trade street art fanny pack deep v tote bag mixtape.\n',
+            '6.2. Drinking vinegar pug bitters meditation sus gatekeep mumblecore. Adaptogen praxis listicle, cred street art wayfarers narwhal.\n',
+            '6.3. Pitchfork JOMO put a bird on it, af VHS ennui salvia helvetica vape retro taxidermy cardigan dreamcatcher. Kale chips austin irony williamsburg chia. Tonx umami irony raw denim hella fit letterpress.\n'
           ],
           style: 'text'
         },
 
         {
-          text: '7. KITOS SĄLYGOS',
+          text: '7. Jean shorts hell',
           style: 'subheader',
           alignment: 'center',
         },
 
         {
           text: [
-            '7.1. Sutartis gali būti keičiama ar papildoma raštišku šalių susitarimu. Sutarties pakeitimai ar papildymai įsigalioja nuo jų pasirašymo momento.\n',
-            '7.2. Visi sutarties priedai, sudaryti rašytine forma ir tinkamai pasirašyti, laikomi neatskiriama jos dalimi.\n',
-            '7.3. Sutartis sudaroma dviem egzemplioriais, po vieną sutarties šalims, kurių kiekvienas turi vienodą teisinę galią.\n',
-            '7.4 Sutartis galioja pasirašius ant kiekvieno sutarties lapo arba el. parašu.\n'
+            '7.1. Cred put a bird on it church-key, kogi taxidermy fit pug selfies fanny pack vegan single-origin coffee distillery umami keytar.\n',
+            '7.2. Cred hashtag art party, direct trade cardigan air plant banjo mukbang keffiyeh before they sold out tumblr hoodie shabby chic.\n',
+            '7.3. Church-key shoreditch kogi scenester squid, offal activated charcoal enamel pin mukbang freegan lyft cred.\n'
           ],
           style: 'text'
         },
 
         {
-          text: '8. ŠALIŲ PARAŠAI IR JURIDINIAI ADRESAI',
+          text: '8. La croix chillwave health goth',
           style: 'subheader',
           alignment: 'center',
         },
@@ -252,14 +249,13 @@ const getPdfText = (req, res, next) => {
               text:
                 [
                   `PASLAUGOS TEIKĖJAS\n\n`,
-                  'Šarūnas Matulaitis\n',
-                  'Ind. veiklos pažyma Nr. 106752\n',
-                  'Pajautos g. 5-15, Vilnius\n',
-                  'El. p.: erinkodara.verslui@gmail.com\n',
-                  'Tel.: +370 674 05202\n',
+                  'Orange Moose\n',
+                  'Reg. Nr. 106752\n',
+                  'Gatvė 123, Vilnius\n',
+                  'El. p.: some.email@gmail.com\n',
+                  'Tel.: +370 123 45678\n',
                   'Atsiskaitomoji sąskaita:\n',
-                  'LT73 7044 0600 0803 1063\n',
-                  'AB SEB bankas',
+                  'LT73 1234 0000 4545 1234\n'
                 ],
               style: 'text'
             }
@@ -281,7 +277,7 @@ const getPdfText = (req, res, next) => {
             },
             {
               width: '50%',
-              text: ['..........................................\n', 'Šarūnas Matulaitis']
+              text: ['..........................................\n', 'Orange Moose']
             },
           ],
           columnGap: 30,
@@ -342,14 +338,13 @@ const getPdfText = (req, res, next) => {
               text:
                 [
                   { text: `Pardavėjas\n`, bold: true },
-                  'Šarūnas Matulaitis\n',
-                  'Ind. veiklos pažyma Nr. 106752\n',
-                  'Pajautos g. 5-15, Vilnius\n',
-                  'El. p.: erinkodara.verslui@gmail.com\n',
-                  'Tel.: +370 674 05202\n',
+                  'Orange Moose\n',
+                  'Reg. Nr. 106752\n',
+                  'Gatvė 123, Vilnius\n',
+                  'El. p.: some.email@gmail.com\n',
+                  'Tel.: +370 123 45678\n',
                   'Atsiskaitomoji sąskaita:\n',
-                  'LT73 7044 0600 0803 1063\n',
-                  'AB SEB bankas',
+                  'LT73 1234 0000 4545 1234\n'
                 ],
               style: 'text',
             },
@@ -450,7 +445,7 @@ const getPdfText = (req, res, next) => {
           text:
             [
               { text: `Suma su mokesčiais: `, bold: true }, `${(parseFloat(req.body.docData.total_srv) + parseFloat(req.body.docData.total_exp)).toFixed(2)} €\n`,
-              { text: `Sąskaitą išrašė: `, bold: true }, 'Šarūnas Matulaitis\n',
+              { text: `Sąskaitą išrašė: `, bold: true }, 'Orange Moose\n',
               { text: `Sąskaitą priėmė: `, bold: true }, `${req.body.clientData.ceo}\n`,
               { text: `Apmokėjimo terminas: `, bold: true }, `${req.body.docData.due}\n`,
             ],

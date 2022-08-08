@@ -3,7 +3,7 @@ const addClient = async (data) => {
     method: 'post',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data)
-  }).then(res => { // promisse
+  }).then(res => {
     if (res.ok) return res.json();
     return Promise.reject({
       status: response.status,
